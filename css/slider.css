@@ -1,0 +1,9 @@
+.nav {position:absolute; z-index:11; top:324px; width:930px; margin:0; padding:0 15px 0 15px; }
+#output {text-align: left; }
+pre { text-align: left; overflow: visible; }
+code { background-color: #ffc }
+pre code { background-color: #eee }
+#s1 {width: 960px; height: 320px; padding:0; margin:0; overflow: hidden;}
+.slides{width: 960px; height: 320px; margin: 0px; padding: 0px;}
+#left {float: left; position: relative; top: 30px;}
+#right {float: right; position: relative; top: 30px;}

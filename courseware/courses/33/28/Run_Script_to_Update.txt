@@ -1,0 +1,5 @@
+1.Type "http://mediacenter.plastipak.com/db_update_img.php" (VPN) in your browser. 
+
+Note: Let the scripts run completely. This may take several minutes.
+
+2. The asset has now been added to the database and is searchable by the file name. 

@@ -1,0 +1,91 @@
+
+
+#main { color: #414042; }
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+
+    background: none repeat scroll 0% 0% rgba(0, 102, 179, 0.75);
+
+}
+
+.crs_green { color: #1b9936; font-weight: normal; }
+
+.crs_red { color: #b6202b; font-weight: normal; }
+
+.crs_head { background: #0066B3; color: #ffffff; }
+
+.crs_headnav { background: #cacaca; }
+
+.crs_headnav a { color: #414042; }
+
+.crs_headnav a:hover, .crs_headnav a.active { color: #0066b3; }
+
+.crs_left {}
+
+.crs_right {}
+
+.crs_sidenav { border: 1px solid #8e9092; }
+
+.crs_sidenav div.title { background: #0066b3; color: #ffffff; }
+
+.crs_sidenav div.data {}
+
+.crs_sideedit { border: 1px solid #EE1D25; }
+
+.crs_sideedit  div.title { background: #EE1D25; color: #ffffff; }
+
+.crs_begin { background: #1b9936; color: #ffffff; }
+
+.crs_end { background: #EE1D25; color: #ffffff; }
+
+.crs_lesson { border-top: 1px solid #8e9092; }
+
+.crs_lesson_title {}
+
+.crs_lesson_title.active { background: #e5f0f7; }
+
+.crs_lesson_chapter {}
+
+.crs_lesson_chapter.active { background: #cbe1ef; }
+
+.crs_progress { background: #8e9092; }
+
+.crs_progress_fill { background: #1b9936; }
+
+.crs_progress_text { color: #ffffff; }
+
+.crs_box { border: 1px solid #8e9092; }
+
+.crs_box:hover { background: #ecedef; }
+
+.crs_foot { background: #0066b3; color: #ecedef; }
+
+.crs_faq {}
+
+.crs_faq_item.separate { border-top: 1px solid #ecedef; }
+
+.crs_faq_line {}
+
+.crs_faq_letter {}
+
+.crs_faq_text {}
+#crs_help_form textarea {height:210px}
+#crs_help_form input, #crs_help_form textarea { background: #ecedef; color: #8e9092; }
+
+.crs_button, #crs_help_form input.crs_button { background: #1b9936; color: #ecedef; }
+
+.crs_button:hover, #crs_help_form input.crs_button:hover { background: #8e9092; }
+
+.lsn_nav { color: #8e9092; }
+
+.lsn_nav_btn { background: #1b9936; color: #ffffff; margin-bottom:30px;width:120px; }
+
+.lsn_nav_btn:hover, .lsn_nav_btn.active { background: #0b6920; }
+
+.lsn_pagenav { background: #8e9092; color: #ffffff; }
+
+.pancontainer { border: 1px solid #8e9092; }
+
+.question-section{
+  margin-bottom:20px;
+}

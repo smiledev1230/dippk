@@ -1,0 +1,7 @@
+Create a Thumbnail
+
+1. Create a thumbnail of your asset (such as a logo, picture, brochure, poster, etc.) 150px wide using Photoshop or another photo editing program. 
+
+2. The thumbnail and asset must have the exact same file names. To name your asset, look at the file names of similar existing assets for file name guidelines (Topic for file name guidelines coming soon).
+
+

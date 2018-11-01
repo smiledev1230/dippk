@@ -1,0 +1,202 @@
+/* CSS Document */
+
+#crs_edithead { font-size: 20px; line-height: 20px; padding: 10px 0px; text-align: center; background: #EE1D25; color: #ffffff; }
+
+.crs_icon_course { width: 55px; height: 50px; background-image: url(../img/icons/course.png); cursor: pointer; }
+
+.crs_icon_plus { width: 19px; height: 19px; background-image: url(../img/icons/plus.png); cursor: pointer; margin-top:0px }
+
+.crs_icon_minus { width: 19px; height: 19px; background-image: url(../img/icons/minus.png); cursor: pointer; margin-top:0px}
+
+.crs_icon_check { width: 19px; height: 19px; background-image: url(../img/icons/check.png); }
+
+.crs_icon_check-green { width: 19px; height: 19px; background-image: url(../img/icons/check-green.png); }
+
+.crs_icon_exclamation { width: 19px; height: 19px; background-image: url(../img/icons/exclamation.png); }
+
+.crs_icon_lesson { background-image: url(../img/icons/lesson.png); }
+
+.crs_icon_quiz { background-image: url(../img/icons/quiz.png); }
+
+.crs_icon_video { background-image: url(../img/icons/video.png); }
+
+.crs_icon_powerpoint { background-image: url(../img/icons/powerpoint.png); }
+
+.crs_icon_pdf { background-image: url(../img/icons/pdf.png); }
+
+.crs_icon_word { background-image: url(../img/icons/word.png); }
+
+.crs_icon_asset { width: 30px; height: 30px; margin-right: 15px; }
+
+.crs_icon_asset.found { background-position: 0 -30px; }
+
+.crs_icon_inline { display: inline-block; margin-bottom: -3px; }
+
+.crs_icontext { width: calc(100% - 34px); text-align: left; margin-left: 15px; }
+
+.crs_begin_big { position: relative; right: -15px; width: 148px; height: 84px; background-image: url(../img/btn_begin_course.png); cursor: pointer; }
+
+.crs_begin_big:hover { background-position: 0 -84px; }
+
+.crs_head { padding: 10px 20px; margin-top: 20px; font-weight: 500; font-size: 20px; letter-spacing: 1px; }
+
+.crs_headnav { font-size: 15px; font-weight: 700; line-height: 20px; padding: 5px 20px; }
+
+.crs_left { float: left; width: 650px; padding: 20px; padding-right: 0px; }
+
+.crs_left.wide { width: 920px; }
+
+.crs_right { float: right; width: 250px; padding: 20px; }
+
+.crs_head_lg { font-size: 20px; line-height: 30px; margin-bottom: 20px; }
+
+.crs_head_md { font-size: 24px; line-height: 24px; margin-bottom: 10px; }
+
+.crs_head_sm { font-size: 17px; line-height: 17px; margin-bottom: 5px; }
+
+.crs_subhead { font-size: 21px; line-height: 21px; font-weight: lighter; }
+
+.crs_text_lg {  }
+
+.crs_text_wrap img { margin-right: 15px; }
+
+.crs_text_lg img { margin-top: 5px; }
+
+.crs_text_md { font-size: 15px; font-weight: lighter; }
+
+.crs_text_sm { font-size: 12px; }
+
+.crs_asset_tbl { font-size: 15px; line-height: 30px; }
+
+.crs_asset_tbl td { padding: 15px 15px 0 0; }
+
+.crs_sidenav { font-size: 15px; text-align: center; }
+
+.crs_sideedit { font-size: 15px; text-align: left; }
+
+.crs_sidenav div.title, .crs_sideedit div.title { font-weight: 700; padding: 10px; cursor: pointer; }
+
+.crs_sidenav div.title.separate { margin-top: 1px; }
+
+.crs_sidenav div.data, .crs_sideedit div.data { display: none; padding: 15px; }
+
+.crs_sidenav div.data.active, .crs_sideedit div.data.active { display: block; }
+
+#crs_nav div.scrolldiv { height: 275px; }
+
+#crs_edit ul, #crs_nav ol { padding: 0; margin: 0 20px; }
+
+.crs_begin, .crs_end { cursor: pointer; height: 30px; font-size: 15px; font-weight: 700; line-height: 30px; }
+
+.crs_begin:hover, .crs_end:hover { opacity: .85; }
+
+.crs_lesson { text-align: left; }
+
+.crs_lesson_title { padding: 5px; line-height: 17px; }
+
+.crs_sidenav div.crs_lesson_title { padding-top: 15px; }
+
+.crs_lesson_title div.crs_icontext { position: relative; top: -5px; }
+
+.crs_lesson_chapter { font-size: 13px; margin: 0 -15px; padding: 5px; padding-left: 39px; }
+
+.crs_lesson_chapter.first { margin: -15px; margin-bottom: 0px; }
+
+.crs_progress { height: 30px; width: 100%; }
+
+.crs_progress_fill { height: 30px; width: 0%; }
+
+.crs_progress_text { position: relative; top: -26px; }
+
+.crs_legend { font-size: 13px; line-height: 19px; }
+
+.crs_box { padding: 15px; }
+
+.crs_coursebox { margin-left: 15px; width: 548px; }
+
+.crs_foot { font-size: 15px; }
+
+.crs_faq { margin: 0px; margin-right: 20px; }
+
+.crs_faq_item {}
+
+.crs_faq_line { padding: 10px 0px; }
+
+.crs_faq_letter { float: left; width: 30px; font-size: 40px; line-height: 40px; }
+
+.crs_faq_text { float: left; width: 560px; padding: 0px 20px; }
+
+.crs_help_title { font-size: 30px; }
+
+.crs_button { border: none; padding: 5px; margin-bottom: 20px; }
+
+#lsn_container {}
+
+#lsn_container object { width: 650px; height: 841px; }
+
+#lsn_scroll { max-height: 600px; }
+
+.lsn_nav { text-align: left; line-height: 17px; font-size: 11px; font-weight: 700; }
+
+.lsn_nav_btn { height: 22px; padding: 6px 10px; position: relative; top: 25px; line-height: 22px; font-size: 11px; font-weight: 700; cursor: pointer; }
+
+.lsn_pagenav { height: 30px; line-height: 30px; }
+
+.lsn_pagenum { text-align: center; width: 250px; }
+
+.lsn_pagenav_btn { width: 160px; height: 30px; padding: 0 20px; cursor: pointer; }
+
+.lsn_pagenav_btn:hover { text-decoration: underline; }
+
+.chp_vim { width: 100%; margin-bottom: 20px; }
+
+.chp_vim iframe {}
+
+.pancontainer { position: relative; overflow: hidden; width: 648px; }
+
+.pancontainer.wide { width: 918px; }
+
+#crs_help_form input, #crs_help_form textarea { width: 230px; font-size: 11px; line-height: 11px; padding: 10px; border: none; }
+
+input[type="submit"] { font-size: 15px; font-weight: 700; line-height: 15px; width: auto; }
+
+textarea {}
+
+#crs_edit_title input[type="text"], #crs_edit_lesson input[type="text"], #crs_edit_tagline input[type="text"] { font-size: inherit; width: calc(100% - 10px); }
+
+#crs_edit_text textarea { width: 640px; height: 433px; }
+
+#crs_edit_desc textarea { width: 405px; height: 200px; }
+
+#crs_edit_thumb form label { width: 100%; display: block; font-size: 15px; margin-bottom: 5px; }
+
+#crs_edit_thumb form input { width: calc(100% - 12px); margin-bottom: 20px; height: 18px !important; padding: 5px; }
+
+#crs_edit_thumb form input[type="submit"] { width: auto; line-height: 18px; height: 28px !important; }
+
+#crs_edit_thumb form input.customfile-filename { width: 248px !important; }
+
+.quiz_answer input { font-size: 15px; width: 628px; padding: 5px 10px; margin-bottom: 10px; }
+
+.quiz_answer input[type="radio"], .quiz_answer input[type="checkbox"] { width: 10px; height: 28px; vertical-align: text-middle; }
+
+.quiz_answer span.radio_text { font-size: 15px; }
+
+.quiz_answer input.crs_button { float: right; margin-top: 10px; width: auto; }
+
+.helpbtn{width:250px!important}
+
+.circle {
+      width: 30px;
+    border-radius: 50%;
+    /* padding: 5px; */
+    background: #1B9936;
+    color: #fff;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+    /* padding: 10px; */
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+}
+

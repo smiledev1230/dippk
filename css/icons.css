@@ -1,0 +1,36 @@
+/* CSS Document */
+.doc { width: 150px; }
+.doc img { width: 148px; cursor: pointer; border: 1px solid #d5d7d8; }
+.doc img:hover { border-color: #0066b3; }
+.small { width: 30px !important; height: 30px !important; z-index: 5; position: relative; top: -41px; left: -5px; margin-bottom: -30px; float: right; }
+.doc .unknown { background-image:url(../img/icons/unknown.png); width: 150px; height: 150px; background-size: contain; }
+.doc .extension { background-color: #414042; color: #fff; font-size: 14px; text-align: center; padding-top: 4px; }
+.doc .audio { background-image:url(../img/icons/audio.png); width: 150px; height: 150px; background-size: contain; }
+/* Microsoft Office icons */
+.doc .msaccess { background-image:url(../img/icons/Access.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msexcel { background-image:url(../img/icons/Excel.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msinfopath { background-image:url(../img/icons/InfoPath.png); width: 148px; height: 148px; background-size: contain; }
+.doc .mslync { background-image:url(../img/icons/Lync.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msonenote { background-image:url(../img/icons/OneNote.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msoutlook { background-image:url(../img/icons/Outlook.png); width: 148px; height: 148px; background-size: contain; }
+.doc .mspowerpoint { background-image:url(../img/icons/PowerPoint.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msproject { background-image:url(../img/icons/Project.png); width: 148px; height: 148px; background-size: contain; }
+.doc .mspublisher { background-image:url(../img/icons/Publisher.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msvisio { background-image:url(../img/icons/Visio.png); width: 148px; height: 148px; background-size: contain; }
+.doc .msword { background-image:url(../img/icons/Word.png); width: 148px; height: 148px; background-size: contain; }
+.doc .adreader { background-image:url(../img/icons/Reader.png); width: 148px; height: 148px; background-size: contain; }
+/* Flags */
+.flag_czech { background-image:url(../img/icons/flag_czech.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_france { background-image:url(../img/icons/flag_france.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_germany { background-image:url(../img/icons/flag_germany.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_italy { background-image:url(../img/icons/flag_italy.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_brazil { background-image:url(../img/icons/flag_brazil.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_romania { background-image:url(../img/icons/flag_romania.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+.flag_spain { background-image:url(../img/icons/flag_spain.gif); width: 34px; height: 23px; background-size: contain; vertical-align: middle; margin-right: 10px; cursor: pointer; }
+/* Payment Options */
+.pay_amex { background-image:url(../img/icons/payment/payment_icon_32.jpg); width: 32px; height: 21px; margin-right: 10px; background-size: contain; }
+.pay_disc { background-image:url(../img/icons/payment/payment_icon_24.jpg); width: 32px; height: 21px; margin-right: 10px; background-size: contain; }
+.pay_mc { background-image:url(../img/icons/payment/payment_icon_17.jpg); width: 32px; height: 21px; margin-right: 10px; background-size: contain; }
+.pay_paypal { background-image:url(../img/icons/payment/payment_icon_15.jpg); width: 32px; height: 21px; margin-right: 10px; background-size: contain; }
+.pay_visa { background-image:url(../img/icons/payment/payment_icon_05.jpg); width: 32px; height: 21px; margin-right: 10px; background-size: contain; }
+}

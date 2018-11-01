@@ -1,0 +1,10 @@
+Add Keywords through the MC Admin Functionality 
+
+1. Login to the MC Admin page: http://mediacenter.plastipak.com/index.php?site=admin
+
+2. Go to the appropriate folder to find the recently uploaded asset. 
+
+3. Click on the box below the image to edit. 
+
+4. Add Keywords and click “Save Keywords”.
+Note: Add "includeme" to the list of keywords (this adds it to the "Top Results" section). Use commas to separate keywords. No spaces after commas. Keywords 3 characters or less will not be recognized.  

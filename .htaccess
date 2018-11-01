@@ -1,0 +1,21 @@
+Options -Indexes
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteRule error/(.*)$ index.php?page=$1 [L]
+RewriteRule getfile/(.*)$ download_content.php?fn=$1 [L]
+RewriteRule getvideo/(.*)$ download_video.php?fn=$1 [L]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?dippk.com/sharetopic/.*$ [NC]
+RewriteRule \.(gif|jpg|png|js|css|doc|docx|txt|ppt|pptx|pdf)$ - [F]
+
+ErrorDocument 400 /error/forbidden
+ErrorDocument 401 /error/forbidden
+ErrorDocument 403 /error/forbidden
+ErrorDocument 404 /error/construction
+ErrorDocument 500 /error/forbidden
+ErrorDocument 501 /error/forbidden
+ErrorDocument 502 /error/forbidden
+ErrorDocument 503 /error/forbidden
+ErrorDocument 504 /error/forbidden
+ErrorDocument 505 /error/forbidden

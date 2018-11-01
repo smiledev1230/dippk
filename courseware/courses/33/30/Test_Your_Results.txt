@@ -1,0 +1,3 @@
+1. In the Media Center (http://mediacenter.plastipak.com), type in a keyword that you entered for the asset in the search bar. Press Enter.
+
+2. Verify that the asset appears in the "Top Results" section. If not, go back through the steps to see what was missed. 

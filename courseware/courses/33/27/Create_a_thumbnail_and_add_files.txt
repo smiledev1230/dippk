@@ -1,0 +1,6 @@
+1. Create/Find an Asset
+2. Create a thumbnail of that asset 150px wide using Photoshop. Be sure to use the exact same file name as the asset. Look at existing asset names for file name guidelines.
+3. MEDIA CENTER (VPN) (\\mediacenterfile00\mediacenter$)
+  Upload Asset to correct folder under 
+  “mediacenter/content” for assets
+  “mediacenter/thumbs” for thumbnails

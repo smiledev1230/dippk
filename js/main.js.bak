@@ -1,0 +1,321 @@
+// JavaScript Document
+$(document).ready(function() {
+    /**
+	 * Nav and Links
+	 */
+	activate_links();
+	$(".faq_answer").slideUp();
+	$(".faq_question").click(function(){
+			$(this).next(".faq_answer").slideToggle(300).siblings(".faq_answer").slideUp(200);
+			$(this).toggleClass('faq_active').siblings(".faq_question").removeClass('faq_active');	
+		});
+	$(".result_foot").click(function(){
+			$(this).hide().prev(".more").removeClass('hidden');
+		});
+	$(".dashboard_icon,.dashboard_label").hover(
+		function(){
+			$(this).siblings().addClass('hovered');
+		},function(){
+			$(this).siblings().removeClass('hovered');
+		});
+	/**
+	 * Tooltips
+	 */
+	$(".filename").hover(function(){
+			var tooltip = '<div class="tooltip"><span>Click for file name explanation.</span></div>';
+			$(this).append(tooltip);
+		},function(){
+			$(".tooltip").remove();
+		});	
+	/**
+	 * Account panel
+	 **/
+	$("#account_panel").removeClass('hidden').hide();
+	$(".account_drop").hover(function(){
+			$("#account_panel").slideDown(300);
+		});
+	$("#header").hover(function(){
+			$("#account_panel").slideUp(300);
+		});
+	/**
+	 * Browse departments panel
+	 */
+	$("#browse_panel").css('top',$("#browse_drop").position().top + $("#browse_drop").height() );
+	/*$(".bpanel_heading").css('width',$("#browse_panel").width() - 30);*/
+	$(".bpanel_contain").each(function(){
+		var listWidth = 1 + Math.max.apply( null, $(this).children(".bpanel_listing").map( function () {
+			return $( this ).outerWidth( true );
+		}).get() );
+		var spaceWidth = ( $(this).width() - ( 3 * listWidth ) ) / 2;
+		$(this).children(".bpanel_listing").css('width',listWidth);
+		$(this).children(".bpanel_space").css('width',spaceWidth);
+	});
+	$("#browse_drop div").hover(
+		function(){
+			$(this).siblings().addClass('hovered');
+			$("#browse_panel").removeClass('invisible');
+		},function(){
+			$(this).siblings().removeClass('hovered');
+			$("#browse_panel").addClass('invisible');
+		});
+	$("#browse_panel").hover(
+		function(){
+			$(this).removeClass('invisible');
+			$("#browse_drop div").addClass('hovered');
+		},function(){
+			$("#browse_drop div").removeClass('hovered');
+			$(this).addClass('invisible');
+		});
+	
+	/**
+	 * Form scripts
+	 */
+	$("input:text,#email").click(function(){ $(this).val(''); });
+	$("#fakepwd").on('focus',function(){ $(this).addClass('hidden').siblings("#pwd").removeClass('hidden').focus(); });
+	$("#recover_form").validate({errorElement: 'div'});
+	$("#profile_form").validate({errorElement: 'div'});
+	$("#pwd_form").validate({
+		errorElement: 'div',
+		rules: {
+    			pwd_cnew: {equalTo: "#pwd_new"}
+			}
+		});
+	$("#reg_form").validate({
+		errorElement: 'div',
+		rules: {
+				conf_email: {equalTo: "#email"},
+    			conf_pwd: {equalTo: "#pwd"}
+			}
+		});
+	$(".i_search").click(function(){submitSearch();});
+	$("#search_txt").keypress(function(event) {
+			if (event.which == 13) {
+				submitSearch();
+			}
+		});
+	$("#contact_form").validate({errorElement: 'div'});
+	/**
+	 * Course scripts
+	 */
+	$(".vim_control").hide();
+	$("#active_vid img").click(function(){
+			$(this).addClass('hidden').parent().css('height','535');
+		});
+	$(".progress_fill").css('width',45);
+	$(".icon_box").hover(
+		function(){
+			$(this).siblings(".label_box").addClass('hovered');
+		},function(){
+			$(this).siblings(".label_box").removeClass('hovered');
+		});
+	$("#active_vim iframe").each(function(){
+				var playerID = $(this).attr('id');
+                var vim_data = $("#vim_data").text().trim().split('::');
+				$f(playerID).addEvent('ready', function(){
+						// Add event listeners
+						$f(playerID).addEvent('play', onPlay);
+						$f(playerID).addEvent('pause', onPause);
+						$f(playerID).addEvent('playProgress', onPlayProgress)
+						// Fire an API method
+						$f(playerID).api('setColor', 'eabf14' );
+						var i = 0;
+						while (vim_data[i]){
+								var vim_property = vim_data[i].split(':');
+								switch( vim_property[0] ) {
+									case 'seek':
+										if( vim_property[1] > 0 ) $f(playerID).api('seekTo', vim_property[1]);
+										break;
+									default:
+										//alert( 'vim_value-d-' + vim_property[1] );
+								}
+								i++;
+							}
+						$("#status").text('Ready.');
+					});
+            });
+	$(".vid_preview").hover(function(){
+			$(this).children(".btn_fav,.btn_watch").removeClass('invisible');
+		},function(){
+			$(this).children(".btn_fav,.btn_watch").addClass('invisible');
+		});
+	$(".btn_fav,.btn_watch").hover(function(){
+			var tooltip = '<div class="tooltip">';
+			if( $(this).hasClass('btn_fav') ) {
+				tooltip += 'Add to Favorites';
+			} else if( $(this).hasClass('btn_watch') ) {
+				tooltip += 'Add to Watchlist';
+			}
+			tooltip += '</div>';
+			$(this).append(tooltip);
+		},function(){
+			$(this).children(".tooltip").remove();
+		}).click(function(event){
+			event.stopPropagation();
+			var id = $(this).parent(".vid_preview").attr('id');
+			var id_string = id.replace( 'crsvid-', '' );
+			var vimeo_ids = id_string.split(':');
+			if( $(this).hasClass('btn_fav') ) {
+				var call_target = 'favorite_add';
+				$(this).removeClass('btn_fav');
+			} else if( $(this).hasClass('btn_watch') ) {
+				var call_target = 'watchlist_add';
+				$(this).removeClass('btn_watch');
+			}
+			$.ajax({
+				type: "POST",
+				url: "index.php",
+				data: { process: "db_call", call: call_target, album: vimeo_ids[0], video: vimeo_ids[1] }
+			});
+		});
+	$(".btn_mp4,.btn_wmv").hover(function(){
+			var tooltip = '<div class="tooltip">';
+			if( $(this).hasClass('btn_mp4') ) {
+				tooltip += 'Download MP4';
+			} else if( $(this).hasClass('btn_wmv') ) {
+				tooltip += 'Download WMV';
+			}
+			tooltip += '</div>';
+			$(this).append(tooltip);
+		},function(){
+			$(this).children(".tooltip").remove();
+		}).click(function(event){
+			event.stopPropagation();
+			var filename = $(this).siblings(".download_name").text();
+			if( $(this).hasClass('btn_mp4') ) {
+				var ext = '.mp4';
+			} else if( $(this).hasClass('btn_wmv') ) {
+				var ext = '.wmv';
+			}
+			var target = 'videos/' + filename + ext;
+			window.open(target);
+		});
+	$(".fav_delete,.watch_delete").click(function(event){
+			event.stopPropagation();
+			if( $(this).hasClass('fav_delete') ) {
+				var id = $(this).parent(".watched").attr('id');
+				var call_target = 'favorite_delete';
+				$(this).parent(".watched").hide();
+			} else if( $(this).hasClass('watch_delete') ) {
+				var id = $(this).parent().siblings(".watched").attr('id');
+				var call_target = 'watchlist_delete';
+				$(this).parent().parent(".watchlist_item").hide();
+			}
+			var id_string = id.replace( 'crsvid-', '' );
+			var vimeo_ids = id_string.split(':');
+			$.ajax({
+				type: "POST",
+				url: "index.php",
+				data: { process: "db_call", call: call_target, album: vimeo_ids[0], video: vimeo_ids[1] }
+			});
+			
+		});
+	
+	/**
+	 * On Load Events
+	 */
+	$(".fitvid").on('load',function(){
+			var w = $(this).parent().width();
+			var dim = $(this).attr('id').split('x');
+			var h = w / dim[0] * dim[1];
+			$(this).css('width',w).css('height',h);
+		});
+	/**
+	 * Lightbox
+	 */
+	$("a.lightbox").lightBox({
+				overlayBgColor: '#eabf14',
+				overlayOpacity: .8,
+				imageLoading: 'img/lightbox/lightbox-ico-loading.gif',
+				imageBtnClose: 'img/lightbox/lightbox-btn-close.gif',
+				imageBtnPrev: 'img/lightbox/lightbox-btn-prev.gif',
+				imageBtnNext: 'img/lightbox/lightbox-btn-next.gif',
+				containerResizeSpeed: 350
+		   });
+});
+
+function activate_links() {
+	$(".link_home").click(function(){ window.location.assign( "index.php?sect=false" ); });
+	$(".link_section").click(function(){ window.location.assign( "index.php" ); });
+	$(".link_login").click(function(){ window.location.assign( "index.php?page=login" ); });
+	$(".link_recover").click(function(){ window.location.assign( "index.php?page=login&view=recover" ); });
+	$(".link_logoff").click(function(){ window.location.assign( "logoff.php" ); });
+	$(".link_register").click(function(){ window.location.assign( "index.php?page=register" ); });
+	$(".link_myaccount").click(function(){ window.location.assign( "index.php?page=myaccount" ); });
+	$(".link_password").click(function(){ window.location.assign( "index.php?page=myaccount#pwd_form" ); });
+	$(".link_mycontent").click(function(){ window.location.assign( "index.php?page=myaccount&view=mycontent" ); });
+	$(".link_billing").click(function(){ window.location.assign( "index.php?page=myaccount&view=billing" ); });
+	$(".link_history").click(function(){ window.location.assign( "index.php?page=myaccount&view=history" ); });
+	$(".link_watchlist").click(function(){ window.location.assign( "index.php?page=myaccount&view=watchlist" ); });
+	$(".link_favorites").click(function(){ window.location.assign( "index.php?page=myaccount&view=favorites" ); });
+	$(".link_about").click(function(){ window.location.assign( "index.php?page=about" ); });
+	$(".link_contact").click(function(){ window.location.assign( "index.php?page=help#contact" ); });
+	$(".link_help").click(function(){ window.location.assign( "index.php?page=help" ); });
+	$(".link_terms").click(function(){ window.location.assign( "index.php?page=terms" ); });
+	$(".link_documents").click(function(){ window.location.assign( "index.php?view=documents" ); });
+	$(".link_presentations").click(function(){ window.location.assign( "index.php?view=presentations" ); });
+	$(".link_videos").click(function(){ window.location.assign( "index.php?view=videos" ); });
+	$(".link_pictures").click(function(){ window.location.assign( "index.php?view=pictures" ); });
+	$(".link_resources").click(function(){ window.location.assign( "index.php?page=help#resources" ); });
+	$(".link_userpanel").click(function(){  });
+	$(".link_course").click(function(){
+		var id = $(this).attr('id');
+		var course_id = id.replace( 'crs-', '' );
+		window.location.assign( "index.php?page=course&id=" + course_id );	
+	});
+	$(".link_coursevid").click(function(){
+		var id = $(this).attr('id');
+		var id_string = id.replace( 'crsvid-', '' );
+		vimeo_ids = id_string.split(':');
+		window.location.assign( "index.php?page=course&id=" + vimeo_ids[0] + "&v=" + vimeo_ids[1] );	
+	});
+}
+
+/*function get_account_bar( usr_id, usr_name ) {
+	$.get( "inc/modules/account.php",
+		{ usr_id: usr_id, usr_name: usr_name },
+		function(data) {
+			$("#account").html(data);
+			activate_links();
+		});
+}*/
+
+function submitSearch() {
+	var search_txt = encodeURIComponent( $("#search_txt").val() );
+	window.location.assign( "index.php?page=results&search=" + search_txt );
+}
+
+function onPlay(playerID){
+	$(".vim_control").slideUp(300);
+	/*$("#" + playerID).parent().parent(".contain").addClass('widecontain').removeClass('contain');*/
+	var w = $("#" + playerID).parent().width();
+	var dim = playerID.split('x');
+	if( w < dim[0] ) {
+		var h = w / dim[0] * dim[1];
+	} else {
+		var h = 720;
+	}
+	$("#" + playerID).css('width',w).css('height',h).parent().css('height',h);
+	$.ajax({
+			type: "POST",
+			url: "index.php",
+			data: { process: "db_call", call: "history_add" }
+		});
+}
+function onPause(playerID){
+	$(".vim_control").slideDown(300);
+	$(".btn_collapse").click(function(){
+			$(".vim_control").hide();
+			$("#" + playerID).css('height',330).parent().css('height',330);
+		});
+	$f(playerID).api('getCurrentTime', function (value, playerID) {
+				$.ajax({
+					type: "POST",
+					url: "index.php",
+					data: { process: "db_call", call: "history_update", progress: value  }
+				});
+			});
+	
+}
+function onPlayProgress(data, playerID) {
+    
+}
